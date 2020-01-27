@@ -1,0 +1,134 @@
+// Top splash section start
+.top-splash-section {
+    min-height: calc(100vh - 141px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px 0;
+    animation: splash-section 1s ease-in-out 2.5s forwards;
+
+    .gradient-line {
+        @include center(horizontal);
+        bottom: -54px;
+        z-index: 5;
+        opacity: 0;
+        animation: gradient-line-animation 1s ease-in-out 4s forwards;
+    }
+    
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(50% 50% at 50% 50%, rgba(238, 238, 238, 0) 0%, #EEEEEE 100%);
+        z-index: 1;
+    }
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("../img/splash-bg.png") no-repeat 50% 50%;
+        opacity: .4;
+        z-index: 0;
+        animation: splash-img-animation 1s ease-in-out 2.5s forwards;
+    }
+}
+
+.phone-sticker {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 80px;
+    height: 80px;
+    z-index: 100;
+    box-shadow: 0px 0px 33px rgba(139, 67, 38, 0.13);
+    background: $color-white;
+    border-radius: 50%;
+    cursor: pointer;
+    @include transition(.3s);
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        @include center(both);
+    }
+}
+
+.logo-wrap {
+    @include center(both);
+    z-index: 10;
+    opacity: 0;
+    animation: logo-animation 2.3s ease-in-out 1s forwards;
+}
+
+.splash-text-wrapper {
+    max-width: 762px;
+    margin: 0 auto 115px;
+    padding: 0 16px;
+    z-index: 10;
+    text-align: center;
+
+    .splash-logos {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin-bottom: 60px;
+
+        .splash-logo {
+            margin: 0 50px;
+
+            &.bottom-indent {
+                margin-bottom: -10px;
+            }
+        }
+    }
+
+    .splash-desc {
+        font-size: 18px;
+        line-height: 30px;
+        font-family: $font-family-roboto;
+    }
+}
+// Top splash section end
+
+
+// Outer section start
+.section-outer {
+    padding-left: 240px;
+     
+}
+
+.section-slider {
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+.slider-inner {
+    display: flex;
+    justify-content: space-between;
+}
+// Outer section end
+
+
+// About slider section start
+.section-about {
+    min-height: 100vh;
+    background: linear-gradient(239.16deg, rgba(229, 229, 229, 0.73) -0.44%, #FFFFFF 62.33%), 
+                url("../img/about-bg.png") no-repeat 100% 50%;
+}
+// About slider section end
+
+

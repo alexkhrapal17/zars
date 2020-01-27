@@ -1,11 +1,215 @@
 @import "vars";
 @import "libs";
+@import "mixins";
+@import "keyframes";
+@import "header";
+@import "footer";
+@import "landing";
 
 body {
 	min-width: 320px;
 	position: relative;
-	font-family: $font-family-roboto;
+	font-family: $font-family-cormorant;
+	color: $color-darkgray;
 	overflow-x: hidden;
 }
+
+* {
+	outline: none !important;
+}
+
+button {
+	cursor: pointer;
+}
+
+input {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+select {
+	-moz-appearance: none;
+}
+
+// Button styles start
+.btn {
+	display: inline-block;
+	position: relative;
+	border-radius: 3px;
+	border: 1px solid $color-brown;
+	color: $color-brown;
+	padding: 10px 40px;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	font-weight: $font-bold;
+	min-width: 260px;
+	text-align: center;
+	background: $color-white;
+	text-transform: uppercase;
+	overflow: hidden;
+	font-family: $font-family-cormorant;
+
+	&:hover {
+		color: $color-white;
+
+		&:before {
+			transform: translateY(0);
+		}
+	}
+
+	span {
+		display: block;
+		position: relative;
+		z-index: 1;
+		@include transition(.25s);
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translateY(100%);
+		width: 100%;
+		height: 100%;
+		background: $color-brown;
+		@include transition(.25s);
+	}
+}
+// Button styles end
+
+
+// Repeat elements start
+.repeat-section {
+	max-width: 825px;
+}
+
+.repeat-title {
+	margin: 0 0 120px;
+	font-size: 74px;
+	line-height: 87px;
+	color: $color-brown;
+	font-weight: $font-light;
+	text-transform: uppercase;
+	position: relative;
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: -70px;
+		left: 0;
+		width: 120px;
+		height: 1px;
+		background: $color-brown;
+	}
+}
+
+.repeat-desc {
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: $font-light;
+	font-family: $font-family-roboto;
+	margin-bottom: 30px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.repeat-slider {
+	padding-top: 220px;
+	width: 600px;
+
+	.slick-list {
+		box-shadow: 0px 20px 33px rgba(139, 67, 38, 0.13);
+		transform-origin: 100% 0;
+    	transition: transform .5s ease;
+
+		&:hover {
+			transform: scale(.8);
+
+			+ .slick-dots {
+				transform: translate(70px, -80px);
+			}
+		}
+	}
+
+	.slick-track {
+		padding: 0;
+		border-radius: 3px;
+		transition: all 1s cubic-bezier(0.7, 0, 0.3, 1)
+	}
+
+	.slide-wrap {
+		overflow: hidden;
+		border-radius: 3px;
+		width: 600px;
+		height: 455px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&.slick-active {
+			img {
+				transform: scale(1);
+			}
+		}
+		
+
+		img {
+			display: block;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			border-radius: 3px;
+			transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+    		transform: scale(1.2);
+		}
+	}
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: -46px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	transform-origin: 100% 0;
+    transition: transform .5s ease;
+
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		width: 46px;
+		text-align: center;
+
+		&.slick-active {
+			button {
+				width: 35px;
+				background: $color-brown;
+			}
+		}
+
+		button {
+			display: inline-block;
+			padding: 0;
+			background: none;
+			border: 1px solid $color-brown;
+			border-radius: 16px;
+			width: 16px;
+			height: 16px;
+			font-size: 0;
+			@include transition(.3s);
+		}
+	}
+}
+// Repeat elements end
 
 @import "media"; // Always at the end

@@ -10,23 +10,160 @@
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<meta name="theme-color" content="#8B4326">
 	<link rel="stylesheet" href="css/main.min.css">
+	<link rel="stylesheet" href="css/fonts.css">
 
 	<!-- Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500,600,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Infant:300,400,500,600,700&display=swap&subset=cyrillic" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+
+	<!-- AOS lib -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 	<!-- Slick slider -->
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 
 <body>
-	123
+	<header class="main-header">
+		<div 
+			class="menu-container"
+			data-aos="fade-right"
+			data-aos-duration="700"
+			data-aos-delay="2900"
+		>
+			<div class="menu-btn">
+				<div class="menu-btn-toggle">
+					<span class="line1"></span>
+					<span class="line2"></span>
+					<span class="line3"></span>
+				</div>
+
+				<span class="menu-btn-text">Меню</span>
+			</div>
+
+			<div class="menu-slide">
+				<nav class="main-nav">
+					<a href="#" class="nav-link">Главная</a>
+					<a href="#" class="nav-link">Планировки</a>
+					<a href="#" class="nav-link">Галерея</a>
+					<a href="#" class="nav-link">Ход строительства</a>
+					<a href="#" class="nav-link">Документация</a>
+					<a href="#" class="nav-link">Характеристики</a>
+					<a href="#" class="nav-link">Новости</a>
+					<a href="#" class="nav-link">О застройщике</a>
+					<a href="#" class="nav-link">Контакты</a>
+				</nav>
+
+				<div class="menu-slide-block">
+					 <h3 class="menu-block-title">Офис</h3>
+					 <p class="menu-block-txt">Французский бульвар 2</p>
+					 <a href="mailto:office@zars.ua" class="menu-block-link">office@zars.ua</a>
+					<a href="tel:+380 (48) 777-55-33" class="menu-block-link">+380 (48) 777-55-33</a>
+				</div>
+
+				<div class="menu-slide-block">
+					<h3 class="menu-block-title">ОФИС ПРОДАЖ</h3>
+					<p class="menu-block-txt">Французский бульвар 29</p>
+					<a href="mailto:estate@zars.ua" class="menu-block-link">estate@zars.ua</a>
+					<a href="tel:+380 (48) 788-77-77" class="menu-block-link">+380 (48) 788-77-77</a>
+				</div>
+
+				<div class="social-links-slide-menu">
+					<a href="#" class="social-links-slide-link">
+						<img src="img/icons/facebook.svg" alt="">
+					</a>
+					<a href="#" class="social-links-slide-link">
+						<img src="img/icons/instagram.svg" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+
+		 <div 
+			class="contacts-container"
+			data-aos="fade-left"
+			data-aos-duration="700"
+			data-aos-delay="2700"
+		 >
+			 <a href="tel:+380 (48) 788-77-77" class="phone-link">+380 (48) 788-77-77</a>
+			 <button class="btn">
+				 <span>Связаться с нами</span>
+			 </button>
+		 </div>
+	</header>
+
+	<main class="main-tagmain">
+		<div 
+			class="phone-sticker"
+			data-aos="fade-left"
+			data-aos-duration="700"
+			data-aos-delay="3000"
+		>
+			<img src="img/icons/phone.svg" alt="">
+		</div>
+		<section class="top-splash-section">
+			<div class="logo-wrap">
+				<img src="img/logo-lb.svg" alt="">
+			</div>
+			<div 
+				class="splash-text-wrapper" 
+				data-aos="fade-up"
+				data-aos-duration="1200"
+				data-aos-delay="2500"
+			>
+				<div class="splash-logos">
+					<img src="img/logo-zars.svg" class="splash-logo" alt="">
+					<img src="img/house-logo.svg" class="splash-logo bottom-indent" alt="">
+				</div>
+				<p class="splash-desc">
+					исключительное качество, соблюдение всех норм и архитектурных канонов в сочетании с передовыми технологиями и уникальностью локации, что и олицетворяет понятие действительно эксклюзивной недвижимости
+				</p>
+			</div>
+			<img 
+				src="img/gradient-line.png" 
+				class="gradient-line"
+				alt=""
+			>
+		</section>
+		<section class="section-outer section-slider section-about">
+			<div class="slider-inner">
+				<div class="repeat-section">
+					<h2 class="repeat-title">О застройщике</h2>
+
+					<p class="repeat-desc">«ЗАРС». Дома Каркашадзе</p> 
+					<p class="repeat-desc">Эстетика и верность выдержанному стилю Строительная компания «ЗАРС» основана 14 октября 1996 года Гиви Силовановичем Каркашадзе (1930—2006). Осуществляет полный инвестиционно-строительный цикл от проектирования до введения в эксплуатацию.</p>
+					<p class="repeat-desc">«ЗАРС» — это слаженная команда единомышленников и профессионалов, которая для каждого проекта находит новые решения, понимая современные тенденции и потребности своих клиентов.</p>
+					<p class="repeat-desc">Отказавшись от массового строительства, компания «ЗАРС» создает уникальные проекты в которых эстетика, качество и комфорт являются основными постулатами.</p>
+					<p class="repeat-desc">Уделяя особое внимание архитектурному решению каждого дома, компания «ЗАРС» осуществляет свой вклад в сохранение уникальности и неповторимости рхитектурного стиля нашего города.</p>
+				</div>
+
+				<div class="repeat-slider">
+					<div class="slide-wrap">
+						<img src="img/about-slider-img.png" alt="">
+					</div>
+					<div class="slide-wrap">
+						<img src="img/about-slider-img.png" alt="">
+					</div>
+					<div class="slide-wrap">
+						<img src="img/about-slider-img.png" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="main-footer">
+
+	</footer>
 
 	<script src="js/scripts.min.js"></script>
 
-	<!-- Scroll magic lib -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+	<!-- AOS lib -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+	<script>
+		AOS.init();
+	</script>
 
 	<!-- Slick slider -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
