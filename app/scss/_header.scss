@@ -19,6 +19,7 @@
         line-height: 29px;
         color: $color-darkgray;
         text-decoration: none;
+        font-family: $font-family-cormorant-numeric;
         @include transition(.2s);
 
         &:hover {
@@ -46,6 +47,7 @@
         z-index: 1;
         width: 18px;
         height: 18px;
+        background: $color-white;
         cursor: pointer;
 
         &.active {

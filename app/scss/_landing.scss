@@ -58,10 +58,6 @@
     cursor: pointer;
     @include transition(.3s);
 
-    &:hover {
-        transform: scale(1.05);
-    }
-
     img {
         @include center(both);
     }
@@ -105,30 +101,270 @@
 // Top splash section end
 
 
-// Outer section start
-.section-outer {
-    padding-left: 240px;
-     
-}
-
-.section-slider {
-    padding-top: 180px;
-    padding-bottom: 180px;
-}
-
-.slider-inner {
-    display: flex;
-    justify-content: space-between;
-}
-// Outer section end
-
-
 // About slider section start
 .section-about {
-    min-height: 100vh;
     background: linear-gradient(239.16deg, rgba(229, 229, 229, 0.73) -0.44%, #FFFFFF 62.33%), 
                 url("../img/about-bg.png") no-repeat 100% 50%;
 }
 // About slider section end
 
 
+// Principles section start
+.principles-section {
+    padding: 100px 0;
+}
+
+.principle-col {
+    .principle-heading {
+        display: flex;
+        margin-bottom: 40px;
+
+        .principle-icon {
+            width: 55px;
+            height: 60px;
+            margin-right: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                display: inline-block;
+                max-width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .principle-heading-title {
+            flex: 1;
+            margin: 0;
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: $font-bold;
+        }
+    }
+
+    .principle-desc {
+        margin: 0 0 30px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: $font-family-roboto;
+        font-weight: $font-light;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+// Principles section end
+
+
+// About complex start
+.section-about-complex {
+    background: url("../img/about-complex-bg.png") no-repeat 100% 0, 
+                linear-gradient(239.16deg, rgba(229, 229, 229, 0.73) -0.44%, #FFFFFF 62.33%);
+    
+    .repeat-section {
+        max-width: 755px;
+
+        .btn {
+            margin-top: 40px;
+        }
+    }
+}
+// About complex end
+
+
+// Unique location start
+.section-unique-location {
+    padding: 70px 0 130px;
+}
+// Unique location end
+
+
+// Section specifications start
+.section-specifications {
+    background: url("../img/specifications-bg.png") no-repeat 100% 0, 
+                linear-gradient(239.16deg, rgba(229, 229, 229, 0.73) -0.44%, #FFFFFF 62.33%);
+
+    .repeat-section {
+        max-width: 705px;
+    }
+}
+// Section specifications end
+
+
+// Section floor plans start
+section.section-floor-plans {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: url("../img/ellipse-bg.png") no-repeat 100% 0, 
+                linear-gradient(239.16deg, rgba(229, 229, 229, 0.73) -0.44%, #FFFFFF 62.33%);
+
+    .repeat-section {
+        max-width: 505px;
+        margin-right: 150px;
+    }
+}
+
+.floor-plans-inner {
+    display: flex;
+}
+
+.btn-choose-floor {
+    margin-top: 80px;
+}
+
+.builing-wrapper {
+    img {
+        max-width: 100%;
+    }
+}
+
+.selects-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 100px;
+
+    .dropdown-select {
+        margin-right: 50px;
+    }
+}
+
+.window-view {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: $font-bold;
+    cursor: pointer;
+    @include transition(.2s);
+
+    &:hover {
+        color: $color-brown;
+    }
+
+    img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+}
+// Section floor plans end
+
+
+// Section gallery start
+.section-gallery {
+    padding: 100px 0 150px;
+}
+
+.gallery-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 120px;
+
+    .repeat-title {
+        margin: 0;
+    }
+}
+
+.gallery-tabs {
+    display: flex;
+    align-items: center;
+
+    .gallery-tab-item {
+        display: block;
+        margin: 0 35px;
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: $font-bold;
+        cursor: pointer;
+        @include transition(.2s);
+
+        &:hover, &.active {
+            color: $color-brown;
+        }
+    }
+}
+// Section gallery end
+
+
+
+// Section callback start
+.callback-wrapper {
+    display: flex;
+
+    .callback-left, .callback-right {
+        width: 50%;
+    }
+
+    .callback-left {
+        min-height: 780px;
+        padding: 80px 70px 80px 233px;
+        background: url("../img/callback-form-bg.png") no-repeat 100% 0, 
+        linear-gradient(126.68deg, rgba(229, 229, 229, 0.73) 18.99%, #FFFFFF 81.01%);
+    }
+
+    .callback-right {
+        background: url("../img/callback-bg.png") no-repeat 50% 50%;
+        background-size: cover;
+        position: relative;
+
+        .callback-sales {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            width: 420px;
+            padding: 40px;
+            background: rgba(139, 67, 38, 0.73);
+            border-radius: 0px 3px 3px 0px;
+
+            .callback-sales-title, .callback-sales-subtitle {
+                display: block;
+                font-size: 36px;
+                line-height: 30px;
+                color: $color-white;
+                font-weight: $font-bold;
+                text-transform: uppercase;
+                margin: 0;
+                text-shadow: 0px 20px 33px rgba(139, 67, 38, 0.33);
+            }
+
+            .callback-sales-subtitle {
+                font-size: 36px;
+                line-height: 38px;
+                text-transform: none;
+                margin-bottom: 30px;
+            }
+
+            .callback-link {
+                font-size: 36px;
+                line-height: 30px;
+                display: block;
+                color: $color-white;
+                font-family: $font-family-cormorant-numeric;
+                @include transition(.2s);
+
+                &:hover {
+                    text-decoration: none;
+                    color: #c9c7c7;
+                }
+            }
+
+            .office-addr {
+                display: block;
+                font-size: 24px;
+                line-height: 30px;
+                color: $color-white;
+
+                .number {
+                    font-family: $font-family-cormorant-numeric;
+                }
+            }
+        }
+    }
+}
+
+.callback-form {
+    max-width: 460px;
+}
+// Section callback end

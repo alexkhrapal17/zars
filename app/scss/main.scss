@@ -31,6 +31,31 @@ select {
 	-moz-appearance: none;
 }
 
+.inner-wrapper {
+	max-width: 1472px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+.section-outer {
+    padding-left: 233px;
+     
+}
+
+.section-slider {
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+.slider-inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-center {
+	text-align: center;
+}
+
 // Button styles start
 .btn {
 	display: inline-block;
@@ -84,9 +109,11 @@ select {
 // Repeat elements start
 .repeat-section {
 	max-width: 825px;
+	margin-right: 30px;
 }
 
 .repeat-title {
+	max-width: 705px;
 	margin: 0 0 120px;
 	font-size: 74px;
 	line-height: 87px;
@@ -107,6 +134,24 @@ select {
 	}
 }
 
+.repeat-subtitle {
+	margin: 0 0 40px;
+	font-size: 36px;
+	line-height: 44px;
+	font-weight: $font-bold;
+	text-transform: uppercase;
+
+	.mark {
+		color: $color-brown;
+	}
+
+	.number {
+		font-family: $font-family-cormorant-numeric;
+		color: $color-brown;
+		font-size: 60px;
+	}
+}
+
 .repeat-desc {
 	font-size: 18px;
 	line-height: 30px;
@@ -119,20 +164,22 @@ select {
 	}
 }
 
-.repeat-slider {
-	padding-top: 220px;
+.repeat-slider, .specification-slider-media {
+	padding-top: 160px;
 	width: 600px;
+	height: 100%;
 
 	.slick-list {
 		box-shadow: 0px 20px 33px rgba(139, 67, 38, 0.13);
 		transform-origin: 100% 0;
-    	transition: transform .5s ease;
+		transition: transform .5s ease;
+		transform: scale(.8) !important;
 
 		&:hover {
-			transform: scale(.8);
+			transform: scale(1) !important;
 
 			+ .slick-dots {
-				transform: translate(70px, -80px);
+				transform: translate(0, 0);
 			}
 		}
 	}
@@ -154,13 +201,13 @@ select {
 		justify-content: center;
 
 		&.slick-active {
-			img {
+			img, video {
 				transform: scale(1);
 			}
 		}
 		
 
-		img {
+		img, video {
 			display: block;
 			height: 100%;
 			width: 100%;
@@ -169,7 +216,17 @@ select {
 			transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
     		transform: scale(1.2);
 		}
+
+		.video-wrap {
+			position: relative;
+		}
 	}
+}
+
+.playpause {
+	@include center(both);
+	z-index: 10;
+	cursor: pointer;
 }
 
 .slick-dots {
@@ -182,6 +239,7 @@ select {
 	margin: 0;
 	list-style: none;
 	transform-origin: 100% 0;
+	transform: translate(70px, -80px);
     transition: transform .5s ease;
 
 	li {
@@ -212,4 +270,127 @@ select {
 }
 // Repeat elements end
 
+
+// Dropdown select start
+.dropdown-select {
+	padding: 20px;
+	position: relative;
+	min-width: 200px;
+	max-width: 300px;
+	user-select: none;
+
+	&.dropdown-select-sm {
+		min-width: 175px;
+		max-width: 200px;
+	}
+	
+	&.active {
+		.dropdown-list {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	.dropdown-item {
+		display: block;
+		padding: 5px 0;
+		cursor: pointer;
+		position: relative;
+		z-index: 10;
+		font-size: 36px;
+		line-height: 44px;
+		font-weight: $font-bold;
+		@include transition(.2s);
+
+		&.active {
+			display: none;
+		}
+
+		&:hover {
+			color: $color-brown;
+		}
+
+		&.selected {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			padding-right: 30px;
+		}
+
+		.dropdown-arrow {
+			@include center(vertical);
+			right: 15px;
+			margin-top: 5px;
+		}
+
+		.mark {
+			display: inline-block;
+			width: 15px;
+			color: $color-brown;
+			font-family: $font-family-cormorant-numeric;
+		}
+	}
+
+	.dropdown-list {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: $color-white;
+		padding: 74px 20px 20px;
+		border-radius: 3px;
+		box-shadow: 0px 20px 33px rgba(139, 67, 38, 0.13);
+		@include transition(.2s);
+	}
+}
+// Dropdown select end
+
+
+// Input styles start
+.input-row {
+	margin-bottom: 40px;
+
+	input, textarea {
+		display: block;
+		width: 100%;
+		background: none;
+		height: 48px;
+		border: none;
+		border-bottom: 1px solid $color-darkgray;
+		font-size: 14px;
+		line-height: 16px;
+		padding: 15px 20px;
+		font-family: $font-family-roboto;
+		color: $color-darkgray;
+		font-weight: $font-light;
+		resize: none;
+	}
+
+	textarea {
+		overflow: hidden;
+	}
+}
+// Input styles end
+
+
+// Custom AOS animations start
+[data-aos="new-animation"] {
+	opacity: 1;
+	transition-property: transform, opacity;
+
+	&.aos-animate {
+		opacity: 1;
+	}
+
+	@media screen and (min-width: 768px) {
+		transform: translateX(100%);
+
+		&.aos-animate {
+			transform: translateX(0);
+		}
+	}
+}
+  // Custom AOS animations end
 @import "media"; // Always at the end
