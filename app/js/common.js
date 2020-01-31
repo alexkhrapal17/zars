@@ -163,4 +163,10 @@ $(function () {
             }
         ]
 	});
+
+	$('.unique-location-infographic').on('click', 'div:not(.active)', function() {
+		$(this)
+			.addClass('active').siblings().removeClass('active')
+			.closest('.unique-location-holder').find('.unique-location-tab-wrapper').removeClass('active').eq($(this).index()).addClass('active');
+    });
 });

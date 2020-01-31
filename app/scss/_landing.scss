@@ -178,11 +178,19 @@
 // Unique location start
 .section-unique-location {
     padding: 70px 0 130px;
+
+    .repeat-title {
+        margin: 0 0 80px;
+    }
+}
+
+.unique-location-holder {
+    display: flex;
 }
 
 .unique-location-wrapper {
-    width: 705px;
-    margin-right: 112px;
+    width: 745px;
+    margin-right: 70px;
 }
 
 .unique-location-tab {
@@ -254,9 +262,176 @@
 
 .unique-location-infographic {
     width: 810px;
-    height: 830px;
+    height: 840px;
     position: relative;
+    margin-top: -200px;
+
+    .info-main-img {
+        position: absolute;
+        top: 365px;
+        left: 312px;
+        margin: 23px 0 0 -32px;
+    }
+
+    .addr-title {
+        position: absolute;
+        top: 380px;
+        left: 48px;
+        font-size: 24px;
+        line-height: 29px;
+        text-transform: uppercase;
+        font-weight: $font-bold;
+
+        .number {
+            font-family: $font-family-cormorant-numeric;
+            font-size: 48px;
+            line-height: 18px;
+            color: $color-brown;
+            position: relative;
+            top: 7px;
+            left: 9px;
+        }
+    }
+
+    .location-link {
+        position: absolute;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover, &.active {
+            &:before {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            @include center(both);
+            z-index: -1;
+            background: #f2f2f2;
+            opacity: 0;
+            visibility: hidden;
+            @include transition(.3s);
+        }
+
+        &.link1 {
+            top: 152px;
+            left: 3px;
+        }
+
+        &.link2 {
+            top: 107px;
+            left: 120px;
+        }
+
+        &.link3 {
+            top: 0;
+            left: 192px;
+        }
+
+        &.link4 {
+            top: 160px;
+            right: 313px;
+        }
+
+        &.link5 {
+            top: 214px;
+            right: 132px;
+        }
+
+        &.link6 {
+            bottom: 383px;
+            right: 116px;
+        }
+
+        &.link7 {
+            bottom: 145px;
+            right: 0;
+        }
+
+        &.link8 {
+            bottom: 114px;
+            left: 257px;
+        }
+
+        &.link9 {
+            bottom: 4px;
+            left: 68px;
+        }
+
+        .location-link-icon {
+            margin-bottom: 10px;
+        }
+
+        .location-name {
+            display: block;
+            font-size: 13px;
+            line-height: 16px;
+            font-weight: $font-bold;
+            text-transform: uppercase;
+
+            .number {
+                font-family: $font-family-cormorant-numeric;
+            }
+        }
+    }
+
+    .info-arrow {
+        position: absolute;
+
+        &.info-arrow1 {
+            top: 209px;
+            left: 98px;
+        }
+
+        &.info-arrow2 {
+            top: 199px;
+            left: 220px;
+        }
+
+        &.info-arrow3 {
+            top: 131px;
+            left: 288px;
+        }
+
+        &.info-arrow4 {
+            top: 276px;
+            right: 363px;
+        }
+
+        &.info-arrow5 {
+            top: 306px;
+            right: 232px;
+        }
+
+        &.info-arrow6 {
+            top: 406px;
+            right: 194px;
+        }
+
+        &.info-arrow7 {
+            bottom: 229px;
+            right: 113px;
+        }
+
+        &.info-arrow8 {
+            bottom: 218px;
+            left: 314px;
+        }
+
+        &.info-arrow9 {
+            bottom: 126px;
+            left: 87px;
+        }
+    }
 }
+
+.animate-house {}
 // Unique location end
 
 
