@@ -143,6 +143,12 @@
     box-shadow: 0px 30.2773px 49.9575px rgba(139, 67, 38, 0.13);
     @include transition(.5s);
 
+    @include media-breakpoint-down(sm) {
+        padding: 40px 16px;
+        transform: translate3d(-300px, 0, 0);
+        width: 280px;
+    }
+
     &.active {
         transform: translate3d(0, 0, 0);
     }
@@ -159,6 +165,11 @@
         text-decoration: none;
         color: $color-darkgray;
         @include transition(.2s);
+
+        @include media-breakpoint-down(sm) {
+            font-size: 21px;
+            line-height: 39px;
+        }
 
         &:hover, &.active {
             color: $color-brown;
