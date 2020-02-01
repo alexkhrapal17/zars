@@ -1,20 +1,41 @@
 .main-footer {
     padding: 40px;
     background: #F2F2F2;
+    position: relative;
+    z-index: 100;
+
+    @include media-breakpoint-down(md) {
+        padding: 40px 16px;
+    }
 }
 
 .footer-wrapper {
     display: flex;
     justify-content: space-between;
 
+    @include media-breakpoint-down(sm) {
+        flex-wrap: wrap;
+    }
+
     .menu-slide-block {
         margin-bottom: 0;
-        // margin-right: 100px;
+        margin-right: 16px;
+        width: 165px;
+
+        @include media-breakpoint-down(sm) {
+            width: 50%;
+            margin-right: 0;
+            padding-right: 16px;
+        }
     }
 }
 
 .logo-footer {
-    // margin-right: 80px;
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
     img {
         max-width: 100%;
@@ -22,11 +43,26 @@
 }
 
 .menu-footer {
-    // margin-right: 200px;
+    margin: 0 16px;
+
+    @media (max-width: 1440px) {
+        flex: 1;
+    }
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        text-align: center;
+        flex: auto;
+        margin: 0;
+    }
 }
 
 .menu-footer-links {
-    height: 50px;
+    min-height: 50px;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 30px;
+    }
 
     .footer-link {
         display: inline-block;
@@ -39,10 +75,30 @@
         font-weight: $font-bold;
         @include transition(.2s);
 
+        @include media-breakpoint-down(sm) {
+            display: block;
+            margin-bottom: 15px;
+            margin-right: 0;
+        }
+
         &:hover {
             text-decoration: none;
             color: $color-darkgray;
         }
+    }
+}
+
+.desktop-footer-block {
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+.mobile-footer-block {
+    display: none;
+
+    @include media-breakpoint-down(sm) {
+        display: block;
     }
 }
 
@@ -53,6 +109,10 @@
     font-weight: $font-light;
     font-family: $font-family-roboto;
     margin-bottom: 40px;
+
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 20px;
+    }
 }
 
 .copyright {
@@ -68,9 +128,21 @@
 
 
 .footer-social {
+    @include media-breakpoint-down(sm) {
+        text-align: center;
+        padding: 45px 0 20px;
+        width: 100%;
+    }
+
     .footer-social-link {
         display: block;
         margin-bottom: 30px;
+
+        @include media-breakpoint-down(sm) {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 20px;
+        }
 
         &:last-child {
             margin-bottom: 0;

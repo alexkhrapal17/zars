@@ -31,6 +31,12 @@ select {
 	-moz-appearance: none;
 }
 
+.main-tagmain {
+	@include media-breakpoint-down(sm) {
+		margin-top: 55px;
+	}
+}
+
 .inner-wrapper {
 	max-width: 1472px;
 	margin: 0 auto;
@@ -38,18 +44,39 @@ select {
 }
 
 .section-outer {
-    padding-left: 233px;
+	padding-left: 233px;
+	
+	@media (max-width: 1440px) {
+		padding-left: 80px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding-left: 0;
+	}
      
 }
 
 .section-slider {
     padding-top: 180px;
-    padding-bottom: 180px;
+	padding-bottom: 180px;
+	
+	@media (max-width: 1440px) {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: 70px 16px;
+	}
 }
 
 .slider-inner {
     display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
+	
+	@media (max-width: 1025px) {
+		display: block;
+	}
 }
 
 .text-center {
@@ -110,6 +137,11 @@ select {
 .repeat-section {
 	max-width: 825px;
 	margin-right: 30px;
+
+	@media (max-width: 1025px) {
+		max-width: initial;
+		margin-right: 0;
+	}
 }
 
 .repeat-title {
@@ -122,6 +154,18 @@ select {
 	text-transform: uppercase;
 	position: relative;
 
+	@include media-breakpoint-down(lg) {
+		margin: 0 0 40px;
+		font-size: 44px;
+		line-height: 57px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		font-size: 36px;
+		line-height: 44px;
+		margin: 0 0 90px;
+	}
+
 	&:after {
 		content: "";
 		display: block;
@@ -131,6 +175,14 @@ select {
 		width: 120px;
 		height: 1px;
 		background: $color-brown;
+
+		@include media-breakpoint-down(lg) {
+			bottom: -15px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			bottom: -40px;
+		}
 	}
 }
 
@@ -162,18 +214,47 @@ select {
 	&:last-child {
 		margin-bottom: 0;
 	}
+
+	@include media-breakpoint-down(sm) {
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+
+.repeat-slider-wrapper {
+	width: 600px;
+	height: 100%;
+	padding-top: 160px;
+
+	@media (max-width: 1025px) {
+		padding-top: 80px;
+		width: auto;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+
+	@include media-breakpoint-down(sm) {
+		margin: 0 -16px;
+		max-width: initial;
+	}
 }
 
 .repeat-slider, .specification-slider-media {
-	padding-top: 160px;
-	width: 600px;
-	height: 100%;
+	@include media-breakpoint-down(sm) {
+		max-width: initial;
+		width: 100%;
+	}
 
 	.slick-list {
 		box-shadow: 0px 20px 33px rgba(139, 67, 38, 0.13);
 		transform-origin: 100% 0;
 		transition: transform .5s ease;
 		transform: scale(.8) !important;
+
+		@media (max-width: 1025px) {
+			transform: none !important;
+		}
 
 		&:hover {
 			transform: scale(1) !important;
@@ -200,6 +281,11 @@ select {
 		align-items: center;
 		justify-content: center;
 
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+			height: 280px;
+		}
+
 		&.slick-active {
 			img, video {
 				transform: scale(1);
@@ -223,6 +309,41 @@ select {
 	}
 }
 
+.repeat-slider-nav {
+	display: none !important;
+
+	@include media-breakpoint-down(sm) {
+		display: block !important;
+	}
+
+	.slick-track {
+		padding: 20px 0 50px;
+	}
+
+	.slide-wrap {
+		height: 100px;
+		margin: 0 10px;
+		position: relative;
+
+		img, video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			box-shadow: 0px 20px 33px rgba(139, 67, 38, 0.13);
+			border-radius: 3px;
+		}
+
+		.playpause {
+			width: 50px;
+			height: 50px;
+
+			img {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
 .playpause {
 	@include center(both);
 	z-index: 10;
@@ -237,10 +358,19 @@ select {
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	z-index: 100;
 	list-style: none;
 	transform-origin: 100% 0;
 	transform: translate(70px, -80px);
-    transition: transform .5s ease;
+	transition: transform .5s ease;
+	
+	@media (max-width: 1025px) {
+		transform: translate(0, 0);
+	}
+
+	@include media-breakpoint-down(sm) {
+		bottom: -160px;
+	}
 
 	li {
 		display: inline-block;
@@ -276,7 +406,7 @@ select {
 	padding: 20px;
 	position: relative;
 	min-width: 200px;
-	max-width: 300px;
+	max-width: 230px;
 	user-select: none;
 
 	&.dropdown-select-sm {
@@ -288,6 +418,13 @@ select {
 		.dropdown-list {
 			opacity: 1;
 			visibility: visible;
+			z-index: 20;
+		}
+
+		.dropdown-item {
+			&.selected {
+				z-index: 25;
+			}
 		}
 	}
 
@@ -352,6 +489,13 @@ select {
 .input-row {
 	margin-bottom: 40px;
 
+	&.error {
+		input, textarea {
+			border-color: $color-red;
+			color: $color-red;
+		}
+	}
+
 	input, textarea {
 		display: block;
 		width: 100%;
@@ -372,6 +516,24 @@ select {
 		overflow: hidden;
 	}
 }
+
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+textarea::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+textarea:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
 // Input styles end
 
 

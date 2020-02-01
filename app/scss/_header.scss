@@ -3,6 +3,17 @@
     justify-content: flex-end;
     padding: 20px;
     background: $color-white;
+
+    @include media-breakpoint-down(sm) {
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 13px 16px;
+        z-index: 1000;
+    }
 }
 
 .contacts-container {
@@ -11,6 +22,10 @@
 
     .btn {
         margin-left: 20px;
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
     }
 
     .phone-link {
@@ -33,6 +48,10 @@
     top: 0;
     left: 0;
     z-index: 100;
+
+    @include media-breakpoint-down(sm) {
+        @include reset-position;
+    }
 }
 
 .menu-btn {
@@ -42,12 +61,16 @@
     height: 130px;
     cursor: pointer;
 
+    @include media-breakpoint-down(sm) {
+        height: auto;
+        @include reset-position;
+    }
+
     .menu-btn-toggle {
         position: relative;
         z-index: 1;
         width: 18px;
         height: 18px;
-        background: $color-white;
         cursor: pointer;
 
         &.active {
@@ -100,6 +123,10 @@
         font-size: 24px;
         line-height: 29px;
         text-transform: uppercase; 
+
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
     }
 }
 

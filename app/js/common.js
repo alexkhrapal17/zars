@@ -12,6 +12,13 @@ $(function () {
 		event.stopPropagation();
 	});
 
+	
+	$('.unique-location-infographic').on('click', 'div:not(.active)', function() {
+		$(this)
+			.addClass('active').siblings().removeClass('active')
+			.closest('.unique-location-holder').find('.unique-location-tab-wrapper').removeClass('active').eq($(this).index()).addClass('active');
+    });
+
 	$('.repeat-slider').slick({
 		infinite: true,
 		arrows: false,
@@ -24,7 +31,19 @@ $(function () {
 		autoplaySpeed: 3000,
 		speed: 900,
 		cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
-		touchThreshold: 100
+		touchThreshold: 100,
+		asNavFor: '.repeat-slider-nav'
+	});
+
+	$('.repeat-slider-nav').slick({
+		infinite: true,
+		arrows: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		centerMode: true,
+		focusOnSelect: true,
+		centerPadding: '100px',
+		asNavFor: '.repeat-slider'
 	});
 
 	$('.unique-location-slider').slick({
@@ -134,39 +153,15 @@ $(function () {
             {
                 breakpoint: 1600,
                 settings: {
-                    centerPadding: '375px'
-                }
-            },
-            {
-                breakpoint: 1200,
-                settings: {
                     centerPadding: '275px'
                 }
             },
             {
-                breakpoint: 991,
+                breakpoint: 1025,
                 settings: {
                     centerPadding: '175px'
-                }
-            },
-            {
-                breakpoint: 770,
-                settings: {
-                    centerPadding: '75px'
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    centerPadding: '50px'
                 }
             }
         ]
 	});
-
-	$('.unique-location-infographic').on('click', 'div:not(.active)', function() {
-		$(this)
-			.addClass('active').siblings().removeClass('active')
-			.closest('.unique-location-holder').find('.unique-location-tab-wrapper').removeClass('active').eq($(this).index()).addClass('active');
-    });
 });
