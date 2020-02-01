@@ -27,7 +27,7 @@ $(function () {
 		slidesToScroll: 1,
 		draggable: true,
 		fade: true,
-		// autoplay: true,
+		autoplay: true,
 		autoplaySpeed: 3000,
 		speed: 900,
 		cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
@@ -42,7 +42,7 @@ $(function () {
         ]
 	});
 
-	if ($(window).width() < 780) {
+	if ($(window).width() < 1200) {
 		$('.repeat-slider-nav').slick({
 			infinite: true,
 			arrows: false,
@@ -114,7 +114,7 @@ $(function () {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		fade: true,
-		// autoplay: true,
+		autoplay: true,
 		autoplaySpeed: 3000,
 		speed: 900
 	});
@@ -128,7 +128,7 @@ $(function () {
 		slidesToScroll: 1,
 		draggable: true,
 		fade: true,
-		// autoplay: true,
+		autoplay: true,
 		autoplaySpeed: 3000,
 		speed: 900,
 		cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
