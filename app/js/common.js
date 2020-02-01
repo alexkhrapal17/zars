@@ -32,7 +32,14 @@ $(function () {
 		speed: 900,
 		cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
 		touchThreshold: 100,
-		asNavFor: '.repeat-slider-nav'
+		responsive: [
+            {
+                breakpoint: 780,
+                settings: {
+                    asNavFor: '.repeat-slider-nav'
+                }
+            }
+        ]
 	});
 
 	if ($(window).width() < 780) {
@@ -136,7 +143,14 @@ $(function () {
 		slidesToScroll: 1,
 		fade: true,
 		adaptiveHeight: true,
-		asNavFor: '.specification-slider-media'
+		responsive: [
+            {
+                breakpoint: 780,
+                settings: {
+					asNavFor: '.specification-slider-media',
+                }
+            }
+        ]
 	});
 	if ($(window).width() < 780) {
 		$('.repeat-slider-nav2').slick({

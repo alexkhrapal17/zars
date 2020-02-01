@@ -191,7 +191,7 @@
 .principles-section {
     padding: 100px 0;
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1540px) {
         padding-left: 65px;
     }
 
@@ -209,7 +209,7 @@
         display: flex;
         margin-bottom: 40px;
 
-        @media (max-width: 1440px) {
+        @media (max-width: 1540px) {
             align-items: center;
         }
 
@@ -236,7 +236,7 @@
             line-height: 30px;
             font-weight: $font-bold;
 
-            @media (max-width: 1440px) {
+            @media (max-width: 1540px) {
                 font-size: 21px;
                 line-height: 24px;
             }
@@ -367,7 +367,7 @@
     width: 745px;
     margin-right: 70px;
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1540px) {
         width: 465px;
     }
 
@@ -594,7 +594,7 @@
         transform: scale(.7) translate(-150px, 0);
     }
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1540px) {
         transform: none;
     }
 
@@ -837,7 +837,7 @@ section.section-floor-plans {
 .floor-plans-inner {
     display: flex;
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1540px) {
         // padding: 0 16px;
     }
 
@@ -884,20 +884,20 @@ section.section-floor-plans {
     align-items: center;
     margin: 0 100px;
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1540px) {
         margin: 0;
-        width: 50%;
     }
 
     @media (max-width: 1025px) {
         display: block;
         margin-top: -24px;
+        width: 50%;
     }
 
     .dropdown-select {
         margin-right: 50px;
 
-        @media (max-width: 1440px) {
+        @media (max-width: 1025px) {
             margin-right: 20px;
 
             &:first-child {
@@ -1051,7 +1051,7 @@ section.section-floor-plans {
     justify-content: space-between;
     margin-bottom: 120px;
 
-    @media (max-width: 1440px) {
+    @media (max-width: 1540px) {
         padding-left: 65px;
     }
 
@@ -1278,7 +1278,7 @@ section.section-floor-plans {
         background: url("../img/callback-form-bg.png") no-repeat 100% 0, 
         linear-gradient(126.68deg, rgba(229, 229, 229, 0.73) 18.99%, #FFFFFF 81.01%);
 
-        @media (max-width: 1440px) {
+        @media (max-width: 1540px) {
             padding-left: 80px;
         }
 
