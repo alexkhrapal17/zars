@@ -133,7 +133,16 @@ $(function () {
 		speed: 900,
 		cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
 		touchThreshold: 100,
-		asNavFor: '.specification-slider-details'
+		asNavFor: '.specification-slider-details',
+		responsive: [
+            {
+                breakpoint: 780,
+                settings: {
+					autoplay: false,
+                    asNavFor: '.repeat-slider-nav'
+                }
+            }
+        ]
 	});
 	$('.specification-slider-details').slick({
 		infinite: true,
@@ -213,13 +222,17 @@ $(function () {
         //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
         var i = (currentSlide ? currentSlide : 0) + 1;
 		$status.text(i + '/' + slick.slideCount);
-	
-		if ($(window).width() > 780) {
-			$('.gallery-slide.slick-active').on('click', function() {
-				$('.section-gallery').toggleClass('active');
-			});
-		}
 	});
+	
+	if ($(window).width() > 780) {
+		$slickElement.on('click', '.slick-current', function() {
+			if($('.section-gallery').hasClass('active')) {
+					$('.section-gallery').removeClass('active');
+			} else {
+				$('.section-gallery').addClass('active');
+			}
+		});
+	}
 	
 	$slickElement.slick({
         slidesToShow: 1,
