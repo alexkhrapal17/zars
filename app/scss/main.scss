@@ -96,6 +96,7 @@ select {
 	text-align: center;
 	font-weight: $font-bold;
 	min-width: 260px;
+	height: 44px;
 	text-align: center;
 	background: $color-white;
 	text-transform: uppercase;
@@ -107,6 +108,24 @@ select {
 
 		&:before {
 			transform: translateY(0);
+		}
+	}
+
+	&.loading {
+		color: $color-white;
+
+		&:before {
+			transform: translateY(0);
+		}
+
+		&:after {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		span {
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
 
@@ -128,6 +147,27 @@ select {
 		height: 100%;
 		background: $color-brown;
 		@include transition(.25s);
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 47%;
+		transform: translateX(-50%) translateZ(0) scale(.2);
+		opacity: 0;
+		visibility: hidden;
+		@include transition(.3s);
+		top: -19px;
+		color: $color-white;
+		font-size: 18px;
+		text-indent: -9999em;
+		overflow: hidden;
+		width: 1em;
+		height: 1em;
+		border-radius: 50%;
+		position: relative;
+		animation: loading 1.3s infinite ease, round 1.3s infinite ease;
 	}
 }
 // Button styles end
@@ -246,6 +286,30 @@ select {
 }
 
 .repeat-slider, .specification-slider-media {
+	transform: scale(.8) !important;
+	transform-origin: 100% 0;
+	transition: transform .7s ease;
+
+	@include media-breakpoint-down(sm) {
+		transform: scale(1) !important;
+	}
+	
+	&:hover {
+		transform: scale(.9) !important;
+
+		@include media-breakpoint-down(sm) {
+			transform: scale(1) !important;
+		}
+
+		.slick-dots {
+			transform: scale(1.1);
+
+			@include media-breakpoint-down(sm) {
+				transform: scale(1) !important;
+			}
+		}
+	}
+
 	@include media-breakpoint-down(sm) {
 		max-width: initial;
 		width: 100%;
@@ -253,20 +317,10 @@ select {
 
 	.slick-list {
 		box-shadow: 0px 20px 33px rgba(139, 67, 38, 0.13);
-		transform-origin: 100% 0;
-		transition: transform .5s ease;
-		transform: scale(.8) !important;
+		
 
 		@media (max-width: 1025px) {
 			transform: none !important;
-		}
-
-		&:hover {
-			transform: scale(1) !important;
-
-			+ .slick-dots {
-				transform: translate(0, 0);
-			}
 		}
 	}
 
@@ -365,9 +419,9 @@ select {
 	margin: 0;
 	z-index: 100;
 	list-style: none;
-	transform-origin: 100% 0;
-	transform: translate(70px, -80px);
-	transition: transform .5s ease;
+	padding-top: 20px;
+	transform: scale(1.25);
+	transition: transform .7s ease;
 	
 	@media (max-width: 1025px) {
 		transform: translate(0, 0);
@@ -423,6 +477,7 @@ select {
 		.dropdown-list {
 			opacity: 1;
 			visibility: visible;
+			transform: translateY(0);
 			z-index: 20;
 		}
 
@@ -489,7 +544,8 @@ select {
 		padding: 74px 20px 20px;
 		border-radius: 3px;
 		box-shadow: 0px 20px 33px rgba(139, 67, 38, 0.13);
-		@include transition(.2s);
+		transform: translateY(10px);
+		@include transition(.4s);
 
 		@include media-breakpoint-down(sm) {
 			padding: 57px 20px 20px;

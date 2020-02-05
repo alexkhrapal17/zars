@@ -3,6 +3,8 @@
     justify-content: flex-end;
     padding: 20px;
     background: $color-white;
+    position: relative;
+    z-index: 1000;
 
     @include media-breakpoint-down(sm) {
         justify-content: space-between;
@@ -130,6 +132,24 @@
     }
 }
 
+.menu-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $color-white;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    @include transition(.4s);
+
+    &.show {
+        opacity: .8;
+        visibility: visible;
+    }
+}
+
 .menu-slide {
     position: absolute;
     top: 0;
@@ -141,6 +161,9 @@
     padding: 70px 43px 40px 43px;
     background: $color-white;
     box-shadow: 0px 30.2773px 49.9575px rgba(139, 67, 38, 0.13);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     @include transition(.5s);
 
     @include media-breakpoint-down(sm) {
@@ -157,6 +180,10 @@
 .main-nav {
     margin-bottom: 40px;
 
+    @media (max-height: 870px) {
+        margin-bottom: 20px;
+    }
+
     .nav-link {
         display: block;
         font-size: 24px;
@@ -166,9 +193,13 @@
         color: $color-darkgray;
         @include transition(.2s);
 
-        @include media-breakpoint-down(sm) {
+        @media (max-height: 950px) {
             font-size: 21px;
             line-height: 39px;
+        }
+
+        @media (max-height: 810px) {
+            line-height: 34px;
         }
 
         &:hover, &.active {
@@ -179,6 +210,10 @@
 
 .menu-slide-block {
     margin-bottom: 40px;
+
+    @media (max-height: 870px) {
+        margin-bottom: 20px;
+    }
 }
 
 .menu-block-title {
@@ -188,6 +223,10 @@
     line-height: 22px;
     color: $color-brown;
     text-transform: uppercase;
+
+    @media (max-height: 870px) {
+        margin: 0 0 10px;
+    }
 }
 
 .menu-block-txt, .menu-block-link {

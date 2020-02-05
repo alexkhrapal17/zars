@@ -18,12 +18,26 @@
         margin: 0;
     }
 
+    &.active {
+        .logo-wrap {
+            animation: logo-afterscroll-animation 1s ease-in-out forwards;
+        }
+
+        .splash-text-wrapper {
+            animation: splash-text-animation 1s ease-in-out .3s forwards;
+
+            @include media-breakpoint-down(sm) {
+                animation: none;
+            }
+        }
+    }
+
     .gradient-line {
         @include center(horizontal);
         bottom: -54px;
         z-index: 5;
         opacity: 0;
-        animation: gradient-line-animation 1s ease-in-out 4s forwards;
+        animation: gradient-line-animation 2s ease-in-out 2s infinite;
 
         @include media-breakpoint-down(sm) {
             display: none;
@@ -114,6 +128,7 @@
     margin: 0 auto 115px;
     padding: 0 16px;
     z-index: 10;
+    opacity: 0;
     text-align: center;
 
     @include media-breakpoint-down(sm) {
@@ -121,6 +136,7 @@
         z-index: 10;
         margin: 0 auto;
         max-width: 310px;
+        animation: opacity-animation 1s ease-in-out 2s forwards;
     }
 
     .splash-logos {
@@ -428,6 +444,7 @@
 
     .repeat-desc {
         padding: 0 20px;
+        opacity: 0;
 
         @include media-breakpoint-down(lg) {
             padding: 0 16px 30px;
@@ -436,6 +453,8 @@
 }
 
 .location-slider {
+    opacity: 0;
+
     @include media-breakpoint-down(sm) {
         // margin: 0 -20px;
     }
@@ -455,10 +474,29 @@
         overflow-y: initial;
 
         .unique-location-tab {
-            animation: tabs-animate 1.5s ease-in-out forwards;
+            @include media-breakpoint-down(lg) {
+                animation: tabs-animate .7s ease-in-out forwards;
+            }
+
+            .location-slider {
+                animation: tabs-animate 1s ease-in-out forwards;
+
+                @include media-breakpoint-down(lg) {
+                    animation: none;
+                    opacity: 1;
+                }
+            }
+
+            .repeat-desc {
+                animation: tabs-animate 1s ease-in-out .3s forwards;
+
+                @include media-breakpoint-down(lg) {
+                    animation: none;
+                    opacity: 1;
+                }
+            }
 
             @include media-breakpoint-down(lg) {
-                animation-duration: .7s;
                 overflow: hidden;
             }
         }
@@ -477,8 +515,7 @@
     }
 
     .slick-dots {
-        bottom: -100px;
-        left: -78px;
+        bottom: -17px;
 
         @include media-breakpoint-down(sm) {
             left: 0;
@@ -699,11 +736,16 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            @include center(both);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
             z-index: -1;
             background: #f2f2f2;
             opacity: 0;
             visibility: hidden;
+            animation: pulse-anim 1.3s ease-in-out infinite;
             @include transition(.3s);
 
             @include media-breakpoint-down(lg) {
@@ -849,7 +891,7 @@
     .repeat-section {
         max-width: 705px;
 
-        @include media-breakpoint-down(lg) {
+        @media (max-width: 1400px) {
             max-width: 475px;
         }
 
@@ -1175,7 +1217,7 @@ section.section-floor-plans {
         border-radius: 3px;
         opacity: 0;
         cursor: pointer;
-        @include transition(.9s);
+        @include transition(.7s);
 
         &.slick-active {
             position: relative;
@@ -1248,7 +1290,7 @@ section.section-floor-plans {
 
     .slick-arrow {
         @include center(vertical);
-        @include transition(.7s);
+        @include transition(.4s);
         border-radius: 50%;
         margin-top: -40px;
         border: none;
@@ -1268,6 +1310,10 @@ section.section-floor-plans {
             left: 300px;
             transform: translateY(-50%) rotate(180deg);
 
+            &:hover {
+                transform: translate(-10px, -50%) rotate(180deg);
+            }
+
             @media (max-width: 1600px) {
                 left: 113px;
             }
@@ -1280,8 +1326,13 @@ section.section-floor-plans {
         &.slick-next {
             right: 300px;
 
+            &:hover {
+                transform: translate(10px, -50%);
+            }
+
             @media (max-width: 1600px) {
                 right: 113px;
+                
             }
 
             @include media-breakpoint-down(sm) {
@@ -1443,12 +1494,53 @@ section.section-floor-plans {
     }
 }
 
-.callback-form {
+.form-callback-wrapper {
     max-width: 460px;
+    position: relative;
 
     @include media-breakpoint-down(sm) {
         max-width: initial;
     }
+
+    &.active {
+        .after-send-dates {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .callback-form {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    .after-send-dates {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(30px);
+        @include transition(.7s);
+
+        .after-send-title {
+            font-size: 23px;
+            line-height: 28px;
+            color: $color-brown;
+            font-weight: $font-bold;
+            margin: 0 0 20px;
+        }
+
+        p {
+            font-family: $font-family-roboto;
+        }
+    }
+}
+
+.callback-form {
+    @include transition(.4s);
 }
 
 .callback-btn-wrap {
